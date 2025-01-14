@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ModMetaData>
+    <name>Bigger Tooltips</name>
+    <author>Boris</author>
+    <packageId>Boris.BiggerTooltips</packageId>
+    <description>For long texts like complicated backstories, tooltips will be wider.</description>
+    <supportedVersions>
+        <li>1.5</li>
+    </supportedVersions>
+</ModMetaData>
