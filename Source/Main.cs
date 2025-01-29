@@ -13,11 +13,24 @@ namespace BiggerTooltips
 	{
 		static Main()
 		{
-			Harmony pat = new Harmony("BiggerTooltips");
+			// Use unique harmony ID based on mod name (or location), so that assembly can be shipped in 2 separate mods being active together
+			if (BiggerTooltips.harmonyID == "")
+			{
+				Assembly assembly = typeof(Main).Assembly;
+				BiggerTooltips.harmonyID = assembly.Location;
+			}
+			Harmony pat = new Harmony(BiggerTooltips.harmonyID);
 			pat.PatchAll();
 		}
 	}
-
+	public class BiggerTooltips : Mod
+	{
+		public static string harmonyID = "";
+		public BiggerTooltips(ModContentPack content) : base(content)
+		{
+			harmonyID = content.Name;
+		}
+	}
 	[HarmonyPatch(typeof(ActiveTip), "get_TipRect")]
 	public static class LargeTip
 	{

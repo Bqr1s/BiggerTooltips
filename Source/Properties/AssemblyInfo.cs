@@ -8,8 +8,8 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("BiggerTooltips")]
-[assembly: AssemblyCopyright("Copyright ©  2025")]
+[assembly: AssemblyProduct("https://github.com/Bqr1s/BiggerTooltips")]
+[assembly: AssemblyCopyright("Copyright © 2025")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
