@@ -37,6 +37,12 @@ namespace BiggerTooltips
 		public static void Postfix(ActiveTip __instance, ref Rect __result)
 		{
 			string text = (string)typeof(ActiveTip).GetProperty("FinalText", BindingFlags.NonPublic | BindingFlags.Instance).GetValue(__instance);
+			// Optimization for many many normal UI tooltips being short
+			const int expectedNonFittingTextLength = 240;
+			if (text.Length < expectedNonFittingTextLength)
+			{
+				return;
+			}
 			// In Vanilla, rect is expanded by 4 at the end of calculation
 			const float doubleSpacing = 8f;
 			const int vanillaWidthLimit = 260;
